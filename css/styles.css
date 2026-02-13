@@ -52,8 +52,6 @@
  *      ## intro scroll down
  *      ## intro about
  *      ## intro stats
- * # SERVICES
- *      ## services list
  * # WORKS
  *      ## portfolio list
  *      ## clients
@@ -3519,154 +3517,19 @@ img.u-pull-left {
     }
 }
 
-
-/* ===================================================================
- * # SERVICES
- *
- *
- * ------------------------------------------------------------------- */
-.s-services {
-    background-color : var(--color-1-dark);
-    padding-top      : var(--vspace-5);
-    padding-bottom   : var(--vspace-5);
-}
-
-/* --------------------------------------------------------------------
- * ## services list
- * -------------------------------------------------------------------- */
-.services-list {
-    max-width  : 1080px;
-    margin-top : var(--vspace-2_5);
-    color      : white;
-}
-
-.services-list .column:nth-child(2n + 1) {
-    padding-right : 2.8rem;
-}
-
-.services-list .column:nth-child(2n + 2) {
-    padding-left : 2.8rem;
-}
-
-.service-item {
-    display       : flex;
-    margin-bottom : var(--vspace-1);
-}
-
-.service-item h3 {
-    margin-top : 0;
-    color      : white;
-}
-
-.service-icon-block {
-    margin-right : 2.6rem;
-}
-
-.service-icon {
-    display             : block;
-    width               : var(--vspace-1_75);
-    height              : var(--vspace-1_75);
-    margin-top          : .4rem;
-    background-repeat   : no-repeat;
-    background-position : center;
-    background-size     : contain;
-    opacity             : 1;
-}
-
-.service-icon--product-design {
-    background-image : url(../images/icons/services/icon-product-design.svg);
-}
-
-.service-icon--branding {
-    background-image : url(../images/icons/services/icon-branding.svg);
-}
-
-.service-icon--frontend {
-    background-image : url(../images/icons/services/icon-frontend.svg);
-}
-
-.service-icon--research {
-    background-image : url(../images/icons/services/icon-research.svg);
-}
-
-.service-icon--illustration {
-    background-image : url(../images/icons/services/icon-illustration.svg);
-}
-
-.service-icon--ecommerce {
-    background-image : url(../images/icons/services/icon-ecommerce.svg);
-}
-
-/* ------------------------------------------------------------------- 
- * responsive:
- * services
- * ------------------------------------------------------------------- */
-@media screen and (max-width: 1200px) {
-    .services-list .column:nth-child(2n + 1) {
-        padding-right : var(--gutter);
-    }
-
-    .services-list .column:nth-child(2n + 2) {
-        padding-left : var(--gutter);
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .service-icon-block {
-        margin-right : 2rem;
-    }
-
-    .service-icon {
-        width  : var(--vspace-1_5);
-        height : var(--vspace-1_5);
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .service-item {
-        margin-bottom : 0;
-    }
-
-    .service-icon-block {
-        margin-right : 2.6rem;
-    }
-
-    .service-icon {
-        width  : var(--vspace-1_75);
-        height : var(--vspace-1_75);
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .service-item {
-        display : block;
-    }
-
-    .service-icon-block {
-        margin-right  : 0;
-        margin-bottom : var(--vspace-0_5);
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .services-list .column:nth-child(2n + 1) {
-        padding-right : 0;
-    }
-
-    .services-list .column:nth-child(2n + 2) {
-        padding-left : 0;
-    }
-}
-
-
 /* ===================================================================
  * # WORKS
  *
  *
  * ------------------------------------------------------------------- */
 .s-works {
-    padding-top    : var(--vspace-5);
+    padding-top    : var(--vspace-3);
     padding-bottom : var(--vspace-4);
+}
+
+#works {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 /* ------------------------------------------------------------------- 
@@ -3674,7 +3537,6 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 .folio-list {
     margin-top    : var(--vspace-2_5);
-    margin-bottom : var(--vspace-2);
 }
 
 .folio-item {
@@ -3736,7 +3598,10 @@ img.u-pull-left {
 .folio-item__thumb img {
     vertical-align : bottom;
     margin-bottom  : 0;
-    transition     : all, 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    width: 100%;            
+    height: 300px;          
+    object-fit: cover;     
+    object-position: center; 
 }
 
 /* portfolio info
@@ -3782,10 +3647,17 @@ img.u-pull-left {
     opacity          : 0;
     visibility       : hidden;
     transform        : translateX(-100%);
-    transition       : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    position         : absolute;
-    bottom           : var(--vspace-1);
-    left             : 3rem;
+    transition       : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);  
+}
+
+.folio-item__project-links {
+    position: absolute;
+    bottom: var(--vspace-1);
+    left: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    z-index: 2;
 }
 
 .folio-item__project-link::before {
@@ -3841,6 +3713,8 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 .clients-outer {
     max-width : 1020px;
+    padding-top: var(--vspace-3);
+    padding-bottom: var(--vspace-3)
 }
 
 .clients-outer .text-clients-title {
@@ -3852,28 +3726,56 @@ img.u-pull-left {
 }
 
 .clients {
-    margin-top     : var(--vspace-1_5);
+    margin-top     : var(--vspace-3);
     padding-bottom : var(--vspace-3);
+    box-align   : center;
 }
 
-.clients__slide img {
-    margin     : 0;
-    opacity    : .15;
-    transform  : scale(0.9);
-    transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+.clients-grid{
+  display: flex;
+  flex-wrap: wrap;             
+  justify-content: center;     
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px); 
+  margin-top: var(--vspace-2);
+  margin-bottom: var(--vspace-2);
 }
 
-.clients__slide:focus img,
-.clients__slide:hover img {
-    transform : scale(1);
-    opacity   : 1;
+.clients-grid .client{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.clients-grid img{
+  width: clamp(60px, 8vw, 100px); 
+  height: auto;
+  display: block;
+}
+
+.clients-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  text-align: center;  
+}
+
+.clients-member img {
+  margin-bottom: 3rem; 
+}
+
+.clients-name {
+    margin: 0;
+}
+
+.clients-role {
+  margin-top: 0.75rem;
+}
 /* ------------------------------------------------------------------- 
  * ## video block
  * ------------------------------------------------------------------- */
 .video-block {
-    margin-top      : var(--vspace-5);
+    margin-top      : var(--vspace-2);
     display         : flex;
     justify-content : center;
     align-items     : center;
@@ -3955,67 +3857,6 @@ img.u-pull-left {
 }
 
 /* ------------------------------------------------------------------- 
- * ## testimonials
- * ------------------------------------------------------------------- */
-.testimonials {
-    margin-top : var(--vspace-4_5);
-    max-width  : 1080px;
-}
-
-.testimonials .swiper-container {
-    padding-bottom : var(--vspace-1_5);
-}
-
-/* testimonial slider
- */
-.testimonial-slider__slide {
-    position : relative;
-}
-
-.testimonial-slider__author {
-    display       : inline-block;
-    min-height    : var(--vspace-2);
-    margin-bottom : var(--vspace-0_625);
-    padding-left  : calc(2.25 * var(--space));
-    position      : relative;
-}
-
-.testimonial-slider__avatar {
-    width         : var(--vspace-1_75);
-    height        : var(--vspace-1_75);
-    border-radius : 100%;
-    outline       : none;
-    position      : absolute;
-    top           : 0;
-    left          : 0;
-}
-
-.testimonial-slider__cite {
-    display : block;
-}
-
-.testimonial-slider__cite strong,
-.testimonial-slider__cite span {
-    font-style : normal;
-    transition : all 0.3s ease-in-out;
-}
-
-.testimonial-slider__cite strong {
-    font-size   : calc(var(--text-size) * 0.9444);
-    font-weight : 400;
-    line-height : var(--vspace-0_75);
-    color       : var(--color-1);
-}
-
-.testimonial-slider__cite span {
-    display     : block;
-    font-size   : var(--text-xs);
-    font-weight : 400;
-    line-height : var(--vspace-0_5);
-    color       : white;
-}
-
-/* ------------------------------------------------------------------- 
  * responsive:
  * works
  * ------------------------------------------------------------------- */
@@ -4075,7 +3916,6 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 .s-contact {
     background-color : var(--color-gray-14);
-    padding-top      : var(--vspace-5);
     padding-bottom   : var(--vspace-3);
 }
 
@@ -4111,8 +3951,9 @@ img.u-pull-left {
  *
  *
  * ------------------------------------------------------------------- */
+
 .s-footer {
-    margin-top : var(--vspace-5);
+    padding-top      : var(--vspace-3);
 }
 
 .s-footer h4 {
