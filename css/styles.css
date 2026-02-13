@@ -52,8 +52,6 @@
  *      ## intro scroll down
  *      ## intro about
  *      ## intro stats
- * # SERVICES
- *      ## services list
  * # WORKS
  *      ## portfolio list
  *      ## clients
@@ -3519,146 +3517,6 @@ img.u-pull-left {
     }
 }
 
-
-/* ===================================================================
- * # SERVICES
- *
- *
- * ------------------------------------------------------------------- */
-.s-services {
-    background-color : var(--color-1-dark);
-    padding-top      : var(--vspace-5);
-    padding-bottom   : var(--vspace-5);
-}
-
-/* --------------------------------------------------------------------
- * ## services list
- * -------------------------------------------------------------------- */
-.services-list {
-    max-width  : 1080px;
-    margin-top : var(--vspace-2_5);
-    color      : white;
-}
-
-.services-list .column:nth-child(2n + 1) {
-    padding-right : 2.8rem;
-}
-
-.services-list .column:nth-child(2n + 2) {
-    padding-left : 2.8rem;
-}
-
-.service-item {
-    display       : flex;
-    margin-bottom : var(--vspace-1);
-}
-
-.service-item h3 {
-    margin-top : 0;
-    color      : white;
-}
-
-.service-icon-block {
-    margin-right : 2.6rem;
-}
-
-.service-icon {
-    display             : block;
-    width               : var(--vspace-1_75);
-    height              : var(--vspace-1_75);
-    margin-top          : .4rem;
-    background-repeat   : no-repeat;
-    background-position : center;
-    background-size     : contain;
-    opacity             : 1;
-}
-
-.service-icon--product-design {
-    background-image : url(../images/icons/services/icon-product-design.svg);
-}
-
-.service-icon--branding {
-    background-image : url(../images/icons/services/icon-branding.svg);
-}
-
-.service-icon--frontend {
-    background-image : url(../images/icons/services/icon-frontend.svg);
-}
-
-.service-icon--research {
-    background-image : url(../images/icons/services/icon-research.svg);
-}
-
-.service-icon--illustration {
-    background-image : url(../images/icons/services/icon-illustration.svg);
-}
-
-.service-icon--ecommerce {
-    background-image : url(../images/icons/services/icon-ecommerce.svg);
-}
-
-/* ------------------------------------------------------------------- 
- * responsive:
- * services
- * ------------------------------------------------------------------- */
-@media screen and (max-width: 1200px) {
-    .services-list .column:nth-child(2n + 1) {
-        padding-right : var(--gutter);
-    }
-
-    .services-list .column:nth-child(2n + 2) {
-        padding-left : var(--gutter);
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .service-icon-block {
-        margin-right : 2rem;
-    }
-
-    .service-icon {
-        width  : var(--vspace-1_5);
-        height : var(--vspace-1_5);
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .service-item {
-        margin-bottom : 0;
-    }
-
-    .service-icon-block {
-        margin-right : 2.6rem;
-    }
-
-    .service-icon {
-        width  : var(--vspace-1_75);
-        height : var(--vspace-1_75);
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .service-item {
-        display : block;
-    }
-
-    .service-icon-block {
-        margin-right  : 0;
-        margin-bottom : var(--vspace-0_5);
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .services-list .column:nth-child(2n + 1) {
-        padding-right : 0;
-    }
-
-    .services-list .column:nth-child(2n + 2) {
-        padding-left : 0;
-    }
-}
-
-
 /* ===================================================================
  * # WORKS
  *
@@ -3786,10 +3644,17 @@ img.u-pull-left {
     opacity          : 0;
     visibility       : hidden;
     transform        : translateX(-100%);
-    transition       : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    position         : absolute;
-    bottom           : var(--vspace-1);
-    left             : 3rem;
+    transition       : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);  
+}
+
+.folio-item__project-links {
+    position: absolute;
+    bottom: var(--vspace-1);
+    left: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    z-index: 2;
 }
 
 .folio-item__project-link::before {
@@ -3870,6 +3735,7 @@ img.u-pull-left {
   align-items: center;
   gap: clamp(16px, 3vw, 40px); 
   margin-top: var(--vspace-2);
+  margin-bottom: var(--vspace-2);
 }
 
 .clients-grid .client{
@@ -3888,7 +3754,7 @@ img.u-pull-left {
  * ## video block
  * ------------------------------------------------------------------- */
 .video-block {
-    margin-top      : var(--vspace-5);
+    margin-top      : var(--vspace-2);
     display         : flex;
     justify-content : center;
     align-items     : center;
