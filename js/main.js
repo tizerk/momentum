@@ -336,23 +336,25 @@
     };  // end ssPhotoSwipe
 
 
-   /* video Lightbox
+/* video Lightbox
     * ------------------------------------------------------ */
     const ssVideoLightbox = function() {
 
-        const videoLink = document.querySelector('.video-link');
-        if (!videoLink) return;
+        const videoLinks = document.querySelectorAll('.video-link');
+        if (!videoLinks.length) return;
 
-        videoLink.addEventListener('click', function(event) {
+        videoLinks.forEach(function(videoLink) {
+            videoLink.addEventListener('click', function(event) {
 
-            const vLink = this.getAttribute('href');
-            const iframe = "<iframe src='" + vLink + "' frameborder='0'></iframe>";
+                const vLink = this.getAttribute('href');
+                const iframe = "<iframe src='" + vLink + "' frameborder='0'></iframe>";
 
-            event.preventDefault();
+                event.preventDefault();
 
-            const instance = basicLightbox.create(iframe);
-            instance.show()
+                const instance = basicLightbox.create(iframe);
+                instance.show();
 
+            });
         });
 
     }; // end ssVideoLightbox

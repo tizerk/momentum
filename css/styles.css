@@ -3774,8 +3774,20 @@ img.u-pull-left {
 /* ------------------------------------------------------------------- 
  * ## video block
  * ------------------------------------------------------------------- */
-.video-block {
+.video-title {
     margin-top      : var(--vspace-2);
+    margin-bottom   : 0;
+    font-size       : 2rem;
+    font-weight     : 400;
+    color           : #f6f6f6;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    text-align      : center;
+    position        : relative;
+}
+.video-block {
+    margin-top      : var(--vspace-1);
     display         : flex;
     justify-content : center;
     align-items     : center;
